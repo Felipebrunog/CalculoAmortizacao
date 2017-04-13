@@ -48,7 +48,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h3>Sobre a equipe e o propósito da Aplicação</h3> 
+                    <h3>Sobre a nossa equipe e o propósito da Aplicação</h3> 
                     
                 </div>
             </div>
