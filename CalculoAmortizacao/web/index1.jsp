@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CÃ¡lculo de amortizaÃ§Ã£o</title>
+    <title>Cálculo de amortização</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,47 +25,14 @@
 </head>
 
 <body id="page-top" class="index">
-<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
-
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="#page-top">Calculadora de AmortizaÃ§Ã£o</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+    <%@include file="WEB-INF/jspf/menu.jspf"%>
 
     <!-- Header --> 
     <header>
         <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt="">
+                    <img class="img-responsive" src="img/imagem do site.png" alt="">
                     <div class="intro-text">
                         <!--<h1 class="name">Start Bootstrap</h1> -->
                          <!-- <hr class="star-light"> -->
@@ -81,17 +48,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Sobre a Equipe e o propÃ³sito da AplicaÃ§Ã£o</h2> 
-                    <hr class="star-light">
+                    <h3>Sobre a equipe e o propósito da Aplicação</h3> 
+                    
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2" align="center">
-                    <p>FaÃ§a aqui a apresentaÃ§Ã£o da Equipe</p>
+                <div class="col-lg-4 col-lg-offset-2" align="left">
+                    <p>Equipe: </p>
+                        <h4>Eder Cirino</h4>
+                        <h4>Felipe Bruno</h4>
+                        <h4>Ricky Cristopher</h4>
+                   
                 </div>
-                <hr class="star-light" align='middle'>
-                <div class="col-lg-4" align="center">
-                    <p>Descreva aqui o que faz a aplicaÃ§Ã£o</p>
+                
+                <div class="col-lg-4" align="right">
+                    <p>Aplicação: </p>
+                    <h4>Essa aplicação calcula a amortização constante, amortização americana e a tabela price de acordo com os dados fornecidos pelo usuário</h4>
                 </div>
             </div>
         </div>
