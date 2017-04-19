@@ -44,7 +44,7 @@
             <div class="row">
              
         <%
-              DecimalFormat df = new DecimalFormat( "0.00" );
+              DecimalFormat df = new DecimalFormat( "00.00" );
              
             int mes=0;
             int c=0;
@@ -66,12 +66,12 @@
         
         %>
         <form>
-            Número de parcelas:<input type="text" name="meses"></br>
-            Valor do empréstimo: <input type="text" name="saldodevedor"></br>
-        Taxa de juros(%): <input type="text" name="juros"></br>
+            Número de parcelas:<input type="text" name="meses" style="color:black"></br>
+            Valor do empréstimo: <input type="text" name="saldodevedor" style="color:black"></br>
+        Taxa de juros(%): <input type="text" name="juros" style="color:black"></br>
                 </br>
-        <input type="submit" value="Calcular Amortização"/>
-        <input type="submit" value="Limpar"/>
+        <input type="submit" value="Calcular Amortização" style="color:black"/>
+        <input type="submit" value="Limpar" style="color:black"/>
         </form>
         </br>
        
@@ -81,16 +81,16 @@
                 <th>Saldo Devedor($)</th>
                 <th>Amortização($)</th>
                 <th>Juros($)</th>
-                <th>Prestação + Juros(R$)</th>
+                <th>Prestação(R$)</th>
             </tr>
             
             <%for(int i=0;i<=mes;i++){%>
             
             <tr>
-                <td align="center"><%= c+=1%><%= "º"%></td>
-                <td align="center"><%=saldo = saldo - amortizacao%></td>
-                 <td align="center"><%=amortizacao = saldo/mes%></td>
-                <td align="center"><%=juros = (saldo * mes)/100 %></td>
+                     <td align="center"><%= c+=1%><%= "º"%></td>
+                     <td align="center"><%=saldo = (saldo - amortizacao)%></td>
+                     <td align="center"><%=amortizacao = saldo/mes%></td>
+                     <td align="center"><%=juros = (saldo * (mes-1)) / 100 %></td>
                      <td align="center"><%=prestacao = amortizacao + juros%></td>
             </tr>
             <%}%>
