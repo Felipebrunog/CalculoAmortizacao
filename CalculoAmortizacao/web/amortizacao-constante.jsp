@@ -1,3 +1,4 @@
+<%@page import="java.text.NumberFormat"%>
 <%@page import="java.text.DecimalFormat"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -80,6 +81,7 @@
                             double S = saldo;
                             double J = 0;
                             double P = 0;
+                            NumberFormat z = NumberFormat.getCurrencyInstance();
                             for (int i = 1; i <= mes; i++) {%>
                                 juros = juros / 100;
                                 A = saldo / mes;
@@ -89,10 +91,10 @@
                             
                         <tr>
                             <td align="center"><%= i%><%= "º"%></td>
-                            <td align="center"><%= S%></td>
-                            <td align="center"><%= A%></td>
-                            <td align="center"><%= J%></td>
-                            <td align="center"><%= P%></td>
+                            <td align="center"><%= z.format(S)%></td>
+                            <td align="center"><%= z.format(A)%></td>
+                            <td align="center"><%= z.format(J)%></td>
+                            <td align="center"><%= z.format(P)%></td>
                         </tr>
                         <%}%>                        
                     </table>
