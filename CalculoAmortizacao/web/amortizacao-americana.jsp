@@ -53,7 +53,8 @@
             double juros=0;
             double prestacao =0;
             double prestacaofim =0;
-             double total =0;
+            double total =0;
+            double saldofim=0;
         try{
              mes = Integer.parseInt(request.getParameter("meses"));
              saldo = Double.parseDouble(request.getParameter("saldodevedor"));
@@ -64,17 +65,17 @@
         }catch(Exception e){}
         
         %>
-        <form>
-            Informe em quantas vezes irá pagar:<input type="number" name="meses"></br>
-        Informe o valor do empréstimo: <input type="number" name="saldodevedor"></br>
-        Informe a taxa de juros(%): <input type="number" name="juros"></br>
+        <form align="center">
+            <b>Informe em quantas vezes irá pagar:</b><input type="number" name="meses" style="color:black"></br>
+            <b>Informe o valor do empréstimo:</b><input type="number" name="saldodevedor" style="color:black"></br>
+            <b>Informe a taxa de juros(%):</b> <input type="number" name="juros" style="color:black" step=0.01></br>
                 </br>
-        <input type="submit" value="Calcular Amortização"/>
-        <input type="submit" value="Limpar"/>
+        <input type="submit" value="Calcular Amortização" style="color:black"/>
+        <input type="submit" value="Limpar" style="color:black"/>
         </form>
         </br>
         <!-- Daqui pra baixo a tabela é criada -->
-        <table border="1">
+        <table border="1" align="center">
            <tr>
                 <th>Meses</th>
                 <th>Saldo Devedor($)</th>
@@ -86,18 +87,43 @@
             <%for(int i=0;i<=mes;i++){%>
             
             <tr>
+                <!--Cria na tabela os meses a pagar -->
                 <td align="center"><%if (i==0){%>
                 <%=i=0%>
                 <%}else{%>
                     <%= c+=1%><%= "º"%></td>
                 <%}%>
-                <td align="center"><%=saldo%></td>
-                 <td align="center">-</td>
+                <!-- Preenche a coluna de saldo devedor -->
+                <td align="center"><%if(i > (mes-1) ){%>
+                        <%="-"%>
+                        <%}else{%>
+                    <%=saldo%></td>
+                    <%}%>
+                <!-- Preenche a coluna de amortização -->
+                 <td align="center"><%if(i > (mes-1) ){%>
+                       <%=saldo%>
+                        <%}else{%>
+                        <%="-"%></td>
+                    <%}%>
+                 <!-- tira a porcentagem do saldo devedor * juros -->
                  <td align="center"><%=prestacao = (saldo * juros)/100%></td>
-                 <td align="center"><%=prestacao%></td>
+                 <!--preenche a coluna de prestação -->
+                 <td align="center"><%if(i > (mes-1) ){%>
+                       <%=(saldofim = saldo + prestacao)%>
+                        <%}else{%>
+                        <%=prestacao%></td>
+                    <%}%>
+                 
             </tr>
             <%}%>
+            <td><hr></td>
+            <td><hr></td>
+            <td><hr></td>
+            <td><hr></td>
+            <td><hr></td>
+
             <tr>
+               
                 <th>Total:
                     <td align="center">-</td>
                     <td align="center"><%=saldo%></td>
