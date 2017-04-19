@@ -48,6 +48,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
+                    
+                    <h1>Docente: Ricardo Pupo Larguesa</h1>
+                    <br />
                     <h3>Sobre a nossa equipe e o propósito da Aplicação</h3> 
                     
                 </div>
